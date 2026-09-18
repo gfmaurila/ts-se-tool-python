@@ -1,0 +1,30 @@
+# PROJECT — TS SE Tool Python 1.61+
+
+## Objetivo
+Redesenvolver em Python o TS SE Tool 0.3.11.0 usando o source legado em `reference/` apenas como referência comportamental. Alvo: American Truck Simulator e Euro Truck Simulator 2 1.61+, priorizando clonagem segura de perfil e leitura/escrita de saves.
+
+## Stack obrigatória
+Python 3.13+, PySide6, pytest/pytest-cov, Ruff, mypy, PyInstaller. Código tipado, modular e testável.
+
+## Regras de execução (Codex + RTK)
+1. Leia `AGENTS.md` uma vez. Execute as tasks em ordem; não carregue todas no contexto simultaneamente.
+2. Antes de implementar uma task, leia somente os arquivos do legado citados/mapeados como necessários e os módulos Python diretamente envolvidos.
+3. Use RTK para reduzir saída de comandos, testes e logs. Não despeje árvores, diffs ou logs completos se um resumo/grep for suficiente.
+4. Não traduza C# linha a linha. Preserve comportamento útil e redesenhe interfaces Python.
+5. Nunca altere um save/profile de amostra in-place: copie para diretório temporário.
+6. Preserve campos/blocos SII desconhecidos sempre que possível. Escrita deve ser lossless para conteúdo não editado.
+7. Toda escrita cria backup e usa gravação atômica (temporário + validação + replace).
+8. Ao fim de cada task: Ruff, mypy e testes relevantes. Só avance com gate verde.
+9. Registre decisões em `docs/` e resultados curtos em `tasks/reports/`.
+10. Não invente suporte a formato criptografado. Se decoder externo for necessário, encapsule-o atrás de uma interface e documente licença/origem.
+
+## Definition of Done global
+- Descobre perfis ATS/ETS2.
+- Lê profile.sii/info.sii/game.sii suportados.
+- Clona perfil com identidade independente sem alterar origem.
+- Edita funcionalidades selecionadas do legado com round-trip seguro.
+- Testes unitários + integração + fixtures 1.61.
+- GUI desktop funcional.
+- `scripts/build.ps1` produz pacote Windows via PyInstaller.
+
+Comece por `tasks/00-analyze-legacy.md`.

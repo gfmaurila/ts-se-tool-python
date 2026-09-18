@@ -1,0 +1,136 @@
+SiiNunit
+{
+direct_gearbox_config : _nameless.124.8419.c0e8 {
+ name: "Eaton Fuller 10 @@speeds@@"
+ clutch_mode: analog
+ selector_mode: range_split
+ gears: 14
+ gears[0]: _nameless.123.72fe.a728
+ gears[1]: _nameless.123.72fe.95e8
+ gears[2]: _nameless.123.72fe.9948
+ gears[3]: _nameless.123.72fe.a848
+ gears[4]: _nameless.123.72fe.a4e8
+ gears[5]: _nameless.123.72fe.9108
+ gears[6]: _nameless.123.72fe.a368
+ gears[7]: _nameless.123.72fe.a188
+ gears[8]: _nameless.123.72fe.93a8
+ gears[9]: _nameless.123.72fe.9e28
+ gears[10]: _nameless.123.72fe.9b88
+ gears[11]: _nameless.123.72fe.9a68
+ gears[12]: _nameless.123.72fe.9768
+ gears[13]: _nameless.123.72fe.99a8
+}
+
+direct_gearbox_gear : _nameless.123.72fe.a728 {
+ gear_impulse_index: 0
+ selector_1: -1
+ selector_2: -1
+ gear: 0
+ name: N
+}
+
+direct_gearbox_gear : _nameless.123.72fe.95e8 {
+ gear_impulse_index: 2
+ selector_1: 0
+ selector_2: -1
+ gear: -1
+ name: RL
+}
+
+direct_gearbox_gear : _nameless.123.72fe.9948 {
+ gear_impulse_index: 2
+ selector_1: 1
+ selector_2: -1
+ gear: -2
+ name: RH
+}
+
+direct_gearbox_gear : _nameless.123.72fe.a848 {
+ gear_impulse_index: 3
+ selector_1: 0
+ selector_2: -1
+ gear: 1
+ name: 1
+}
+
+direct_gearbox_gear : _nameless.123.72fe.a4e8 {
+ gear_impulse_index: 4
+ selector_1: 0
+ selector_2: -1
+ gear: 2
+ name: 2
+}
+
+direct_gearbox_gear : _nameless.123.72fe.9108 {
+ gear_impulse_index: 5
+ selector_1: 0
+ selector_2: -1
+ gear: 3
+ name: 3
+}
+
+direct_gearbox_gear : _nameless.123.72fe.a368 {
+ gear_impulse_index: 6
+ selector_1: 0
+ selector_2: -1
+ gear: 4
+ name: 4
+}
+
+direct_gearbox_gear : _nameless.123.72fe.a188 {
+ gear_impulse_index: 7
+ selector_1: 0
+ selector_2: -1
+ gear: 5
+ name: 5
+}
+
+direct_gearbox_gear : _nameless.123.72fe.93a8 {
+ gear_impulse_index: 3
+ selector_1: 1
+ selector_2: -1
+ gear: 6
+ name: 6
+}
+
+direct_gearbox_gear : _nameless.123.72fe.9e28 {
+ gear_impulse_index: 4
+ selector_1: 1
+ selector_2: -1
+ gear: 7
+ name: 7
+}
+
+direct_gearbox_gear : _nameless.123.72fe.9b88 {
+ gear_impulse_index: 5
+ selector_1: 1
+ selector_2: -1
+ gear: 8
+ name: 8
+}
+
+direct_gearbox_gear : _nameless.123.72fe.9a68 {
+ gear_impulse_index: 6
+ selector_1: 1
+ selector_2: -1
+ gear: 9
+ name: 9
+}
+
+direct_gearbox_gear : _nameless.123.72fe.9768 {
+ gear_impulse_index: 7
+ selector_1: 1
+ selector_2: -1
+ gear: 10
+ name: 10
+}
+
+direct_gearbox_gear : _nameless.123.72fe.99a8 {
+ gear_impulse_index: 1
+ selector_1: -1
+ selector_2: -1
+ gear: 0
+ name: ""
+}
+
+}
