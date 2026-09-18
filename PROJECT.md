@@ -51,4 +51,9 @@ Limite de créditos/tokens/contexto próximo?
       └── SIM → testes possíveis → CONTINUATION_REPORT.md → STOP seguro
 ```
 
-Comece por `tasks/00-analyze-legacy.md`, salvo quando um `CONTINUATION_REPORT.md` válido indicar explicitamente outro ponto de retomada.
+Sequência após a auditoria de paridade: `11a-decoder-parity` →
+`11b-safe-save-io` → `11c-profile-identity-io` →
+`11d-player-company-parity` → `11e-vehicle-trailer-parity` →
+`11f-garage-market-parity` → `11g-convoy-settings-ui` → Tasks 11–13 de
+compatibilidade/build. Nunca avance enquanto o decoder ou os gates da task
+atual estiverem bloqueados.
