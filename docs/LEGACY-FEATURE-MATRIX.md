@@ -13,7 +13,7 @@ class name or a current-save validation.
 | Steam profile discovery | `FormMethods` | profile refresh | profile paths | `ProfileDiscovery` | `test_profile_discovery` | PARCIAL |
 | Profile/save selection | `MethodsReadWrite` | load/profile-save refresh | `profile.sii`, `info.sii`, `game.sii` | discovery + GUI | discovery/desktop tests | PARCIAL |
 | Plain SII format detection | `MethodsDecodeSave` | `NewDecodeFile` | `SiiNunit` | `detect_save_format` | `test_sii_decoder` | IMPLEMENTADO |
-| ScsC decrypt/decode | `MethodsDecodeSave` | P/Invoke `DecryptAndDecodeMemory` | `ScsC` | none | typed-error test | NÃO IMPLEMENTADO |
+| ScsC decrypt/decode | `MethodsDecodeSave` | P/Invoke `DecryptAndDecodeMemory` | `ScsC` | `ScsContainerDecoder` (AES-256-CBC + zlib envelope only) | `test_sii_decoder` copied ATS/ETS 1.61 fixtures | PARCIAL |
 | BSII decode | `MethodsDecodeSave` | `DecodeMemory` | binary SII | none | none | NÃO IMPLEMENTADO |
 | 3nK decode | `MethodsDecodeSave` | `DecodeMemory` | `3nK` | detection only | `test_sii_decoder` | PARCIAL |
 | Decoder error/result handling | `MethodsDecodeSave` | format switch/result codes | all | typed exceptions | `test_sii_decoder` | PARCIAL |

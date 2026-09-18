@@ -1,6 +1,6 @@
 # ScsC decoder investigation
 
-Status: investigated on 2026-09-18; no decoder incorporated.
+Status: ScsC envelope decoding implemented on 2026-09-18; BSII/3nK remain open.
 
 ## Local evidence
 
@@ -28,10 +28,25 @@ may be textual SII or BSII. The C++ MIT project documents the same pipeline
 and includes a BSII decoder. This supports a legal independent implementation
 direction, but is not evidence that current project fixtures decode correctly.
 
+## Implemented ScsC envelope stage
+
+`ScsContainerDecoder` is an independent Python implementation of the
+documented ScsC AES-256-CBC, PKCS#7, and zlib stages. It declares
+`cryptography` (Apache-2.0 OR BSD-3-Clause) as a normal Python dependency;
+the product contains no third-party DLL, executable, or copied decoder code.
+
+The MIT-licensed `liam-dong/SII-Decrypt-cpp` source was reviewed on
+2026-09-18 to cross-check the envelope structure and key. Its MIT license
+permits redistribution, but it is not incorporated in this repository.
+
+Temporary-copy tests against supplied ATS and ETS 1.61 `game.sii` files prove
+that their original bytes remain unchanged and that each ScsC envelope inflates
+successfully. Both inner payloads start `BSII` version 3 rather than `SiiN`.
+Accordingly the parser cannot consume them yet and ScsC remains **PARTIAL**.
+
 ## Required next step
 
-Select and pin a permissively licensed implementation/source after reviewing
-its license file at the chosen revision, then run decode + parser tests against
-a temporary copy of `projeto_atual/ATS/.../save/autosave/{info,game}.sii`.
+Implement a lossless BSII v3-to-SiiN decoder and 3nK decoder, then run
+decode + parser tests against temporary copies of both supplied 1.61 games.
 The result must be parseable `SiiNunit` and preserve original fixtures before
-Task 11 can be completed.
+Task 11A can be completed.
