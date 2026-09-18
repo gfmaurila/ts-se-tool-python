@@ -1,0 +1,66 @@
+D:\Empresa\GFMaurila\projetos\TS-SE-Tool\TS SE Tool\bin\Debug\SII_Decrypt.dll
+D:\Empresa\GFMaurila\projetos\TS-SE-Tool\TS SE Tool\bin\Debug\TS SE Tool.exe.config
+D:\Empresa\GFMaurila\projetos\TS-SE-Tool\TS SE Tool\bin\Debug\TS SE Tool.exe
+D:\Empresa\GFMaurila\projetos\TS-SE-Tool\TS SE Tool\bin\Debug\TS SE Tool.pdb
+D:\Empresa\GFMaurila\projetos\TS-SE-Tool\TS SE Tool\bin\Debug\ErikEJ.SqlCe40.dll
+D:\Empresa\GFMaurila\projetos\TS-SE-Tool\TS SE Tool\bin\Debug\ICSharpCode.SharpZipLib.dll
+D:\Empresa\GFMaurila\projetos\TS-SE-Tool\TS SE Tool\bin\Debug\OpenPainter.ColorPicker.dll
+D:\Empresa\GFMaurila\projetos\TS-SE-Tool\TS SE Tool\bin\Debug\Salient.Data.dll
+D:\Empresa\GFMaurila\projetos\TS-SE-Tool\TS SE Tool\bin\Debug\System.Data.SqlServerCe.dll
+D:\Empresa\GFMaurila\projetos\TS-SE-Tool\TS SE Tool\bin\Debug\ErikEJ.SqlCe40.xml
+D:\Empresa\GFMaurila\projetos\TS-SE-Tool\TS SE Tool\bin\Debug\ICSharpCode.SharpZipLib.pdb
+D:\Empresa\GFMaurila\projetos\TS-SE-Tool\TS SE Tool\bin\Debug\ICSharpCode.SharpZipLib.xml
+D:\Empresa\GFMaurila\projetos\TS-SE-Tool\TS SE Tool\obj\Debug\TS SE Tool.csproj.AssemblyReference.cache
+D:\Empresa\GFMaurila\projetos\TS-SE-Tool\TS SE Tool\obj\Debug\TS_SE_Tool.FormProfileEditor.resources
+D:\Empresa\GFMaurila\projetos\TS-SE-Tool\TS SE Tool\obj\Debug\TS_SE_Tool.FormAboutBox.resources
+D:\Empresa\GFMaurila\projetos\TS-SE-Tool\TS SE Tool\obj\Debug\TS_SE_Tool.FormCheckUpdates.resources
+D:\Empresa\GFMaurila\projetos\TS-SE-Tool\TS SE Tool\obj\Debug\TS_SE_Tool.FormAddCustomFolder.resources
+D:\Empresa\GFMaurila\projetos\TS-SE-Tool\TS SE Tool\obj\Debug\OpenPainter.ColorPicker.FormColorPicker.resources
+D:\Empresa\GFMaurila\projetos\TS-SE-Tool\TS SE Tool\obj\Debug\TS_SE_Tool.FormConvoyControlPositions.resources
+D:\Empresa\GFMaurila\projetos\TS-SE-Tool\TS SE Tool\obj\Debug\TS_SE_Tool.FormGaragesSoldContent.resources
+D:\Empresa\GFMaurila\projetos\TS-SE-Tool\TS SE Tool\obj\Debug\TS_SE_Tool.FormMain.resources
+D:\Empresa\GFMaurila\projetos\TS-SE-Tool\TS SE Tool\obj\Debug\TS_SE_Tool.FormProgramSettings.resources
+D:\Empresa\GFMaurila\projetos\TS-SE-Tool\TS SE Tool\obj\Debug\TS_SE_Tool.FormSettings.resources
+D:\Empresa\GFMaurila\projetos\TS-SE-Tool\TS SE Tool\obj\Debug\TS_SE_Tool.FormShareUserColors.resources
+D:\Empresa\GFMaurila\projetos\TS-SE-Tool\TS SE Tool\obj\Debug\TS_SE_Tool.FormSplash.resources
+D:\Empresa\GFMaurila\projetos\TS-SE-Tool\TS SE Tool\obj\Debug\TS_SE_Tool.FormProfileEditorRenameClone.resources
+D:\Empresa\GFMaurila\projetos\TS-SE-Tool\TS SE Tool\obj\Debug\TS_SE_Tool.FormProfileEditorSettingsImportExport.resources
+D:\Empresa\GFMaurila\projetos\TS-SE-Tool\TS SE Tool\obj\Debug\TS_SE_Tool.Properties.Resources.resources
+D:\Empresa\GFMaurila\projetos\TS-SE-Tool\TS SE Tool\obj\Debug\TS SE Tool.csproj.GenerateResource.cache
+D:\Empresa\GFMaurila\projetos\TS-SE-Tool\TS SE Tool\obj\Debug\TS SE Tool.csproj.CoreCompileInputs.cache
+D:\Empresa\GFMaurila\projetos\TS-SE-Tool\TS SE Tool\obj\Debug\TS SE Tool.csproj.Up2Date
+D:\Empresa\GFMaurila\projetos\TS-SE-Tool\TS SE Tool\obj\Debug\TS SE Tool.exe
+D:\Empresa\GFMaurila\projetos\TS-SE-Tool\TS SE Tool\obj\Debug\TS SE Tool.pdb
+D:\Empresa\GFMaurila\projetos\TS-SE-Tool-ATS-ETS2-1.61\TS.SE.Tool.vs.0.3.11.0\TS SE Tool\bin\Debug\SII_Decrypt.dll
+D:\Empresa\GFMaurila\projetos\TS-SE-Tool-ATS-ETS2-1.61\TS.SE.Tool.vs.0.3.11.0\TS SE Tool\bin\Debug\TS SE Tool.exe.config
+D:\Empresa\GFMaurila\projetos\TS-SE-Tool-ATS-ETS2-1.61\TS.SE.Tool.vs.0.3.11.0\TS SE Tool\bin\Debug\TS SE Tool.exe
+D:\Empresa\GFMaurila\projetos\TS-SE-Tool-ATS-ETS2-1.61\TS.SE.Tool.vs.0.3.11.0\TS SE Tool\bin\Debug\TS SE Tool.pdb
+D:\Empresa\GFMaurila\projetos\TS-SE-Tool-ATS-ETS2-1.61\TS.SE.Tool.vs.0.3.11.0\TS SE Tool\bin\Debug\ErikEJ.SqlCe40.dll
+D:\Empresa\GFMaurila\projetos\TS-SE-Tool-ATS-ETS2-1.61\TS.SE.Tool.vs.0.3.11.0\TS SE Tool\bin\Debug\ICSharpCode.SharpZipLib.dll
+D:\Empresa\GFMaurila\projetos\TS-SE-Tool-ATS-ETS2-1.61\TS.SE.Tool.vs.0.3.11.0\TS SE Tool\bin\Debug\OpenPainter.ColorPicker.dll
+D:\Empresa\GFMaurila\projetos\TS-SE-Tool-ATS-ETS2-1.61\TS.SE.Tool.vs.0.3.11.0\TS SE Tool\bin\Debug\Salient.Data.dll
+D:\Empresa\GFMaurila\projetos\TS-SE-Tool-ATS-ETS2-1.61\TS.SE.Tool.vs.0.3.11.0\TS SE Tool\bin\Debug\System.Data.SqlServerCe.dll
+D:\Empresa\GFMaurila\projetos\TS-SE-Tool-ATS-ETS2-1.61\TS.SE.Tool.vs.0.3.11.0\TS SE Tool\bin\Debug\ErikEJ.SqlCe40.xml
+D:\Empresa\GFMaurila\projetos\TS-SE-Tool-ATS-ETS2-1.61\TS.SE.Tool.vs.0.3.11.0\TS SE Tool\bin\Debug\ICSharpCode.SharpZipLib.pdb
+D:\Empresa\GFMaurila\projetos\TS-SE-Tool-ATS-ETS2-1.61\TS.SE.Tool.vs.0.3.11.0\TS SE Tool\bin\Debug\ICSharpCode.SharpZipLib.xml
+D:\Empresa\GFMaurila\projetos\TS-SE-Tool-ATS-ETS2-1.61\TS.SE.Tool.vs.0.3.11.0\TS SE Tool\obj\Debug\TS SE Tool.csproj.AssemblyReference.cache
+D:\Empresa\GFMaurila\projetos\TS-SE-Tool-ATS-ETS2-1.61\TS.SE.Tool.vs.0.3.11.0\TS SE Tool\obj\Debug\TS_SE_Tool.FormProfileEditor.resources
+D:\Empresa\GFMaurila\projetos\TS-SE-Tool-ATS-ETS2-1.61\TS.SE.Tool.vs.0.3.11.0\TS SE Tool\obj\Debug\TS_SE_Tool.FormAboutBox.resources
+D:\Empresa\GFMaurila\projetos\TS-SE-Tool-ATS-ETS2-1.61\TS.SE.Tool.vs.0.3.11.0\TS SE Tool\obj\Debug\TS_SE_Tool.FormCheckUpdates.resources
+D:\Empresa\GFMaurila\projetos\TS-SE-Tool-ATS-ETS2-1.61\TS.SE.Tool.vs.0.3.11.0\TS SE Tool\obj\Debug\TS_SE_Tool.FormAddCustomFolder.resources
+D:\Empresa\GFMaurila\projetos\TS-SE-Tool-ATS-ETS2-1.61\TS.SE.Tool.vs.0.3.11.0\TS SE Tool\obj\Debug\OpenPainter.ColorPicker.FormColorPicker.resources
+D:\Empresa\GFMaurila\projetos\TS-SE-Tool-ATS-ETS2-1.61\TS.SE.Tool.vs.0.3.11.0\TS SE Tool\obj\Debug\TS_SE_Tool.FormConvoyControlPositions.resources
+D:\Empresa\GFMaurila\projetos\TS-SE-Tool-ATS-ETS2-1.61\TS.SE.Tool.vs.0.3.11.0\TS SE Tool\obj\Debug\TS_SE_Tool.FormGaragesSoldContent.resources
+D:\Empresa\GFMaurila\projetos\TS-SE-Tool-ATS-ETS2-1.61\TS.SE.Tool.vs.0.3.11.0\TS SE Tool\obj\Debug\TS_SE_Tool.FormMain.resources
+D:\Empresa\GFMaurila\projetos\TS-SE-Tool-ATS-ETS2-1.61\TS.SE.Tool.vs.0.3.11.0\TS SE Tool\obj\Debug\TS_SE_Tool.FormProgramSettings.resources
+D:\Empresa\GFMaurila\projetos\TS-SE-Tool-ATS-ETS2-1.61\TS.SE.Tool.vs.0.3.11.0\TS SE Tool\obj\Debug\TS_SE_Tool.FormSettings.resources
+D:\Empresa\GFMaurila\projetos\TS-SE-Tool-ATS-ETS2-1.61\TS.SE.Tool.vs.0.3.11.0\TS SE Tool\obj\Debug\TS_SE_Tool.FormShareUserColors.resources
+D:\Empresa\GFMaurila\projetos\TS-SE-Tool-ATS-ETS2-1.61\TS.SE.Tool.vs.0.3.11.0\TS SE Tool\obj\Debug\TS_SE_Tool.FormSplash.resources
+D:\Empresa\GFMaurila\projetos\TS-SE-Tool-ATS-ETS2-1.61\TS.SE.Tool.vs.0.3.11.0\TS SE Tool\obj\Debug\TS_SE_Tool.FormProfileEditorRenameClone.resources
+D:\Empresa\GFMaurila\projetos\TS-SE-Tool-ATS-ETS2-1.61\TS.SE.Tool.vs.0.3.11.0\TS SE Tool\obj\Debug\TS_SE_Tool.FormProfileEditorSettingsImportExport.resources
+D:\Empresa\GFMaurila\projetos\TS-SE-Tool-ATS-ETS2-1.61\TS.SE.Tool.vs.0.3.11.0\TS SE Tool\obj\Debug\TS_SE_Tool.Properties.Resources.resources
+D:\Empresa\GFMaurila\projetos\TS-SE-Tool-ATS-ETS2-1.61\TS.SE.Tool.vs.0.3.11.0\TS SE Tool\obj\Debug\TS SE Tool.csproj.GenerateResource.cache
+D:\Empresa\GFMaurila\projetos\TS-SE-Tool-ATS-ETS2-1.61\TS.SE.Tool.vs.0.3.11.0\TS SE Tool\obj\Debug\TS SE Tool.csproj.CoreCompileInputs.cache
+D:\Empresa\GFMaurila\projetos\TS-SE-Tool-ATS-ETS2-1.61\TS.SE.Tool.vs.0.3.11.0\TS SE Tool\obj\Debug\TS SE Tool.csproj.Up2Date
+D:\Empresa\GFMaurila\projetos\TS-SE-Tool-ATS-ETS2-1.61\TS.SE.Tool.vs.0.3.11.0\TS SE Tool\obj\Debug\TS SE Tool.exe
+D:\Empresa\GFMaurila\projetos\TS-SE-Tool-ATS-ETS2-1.61\TS.SE.Tool.vs.0.3.11.0\TS SE Tool\obj\Debug\TS SE Tool.pdb

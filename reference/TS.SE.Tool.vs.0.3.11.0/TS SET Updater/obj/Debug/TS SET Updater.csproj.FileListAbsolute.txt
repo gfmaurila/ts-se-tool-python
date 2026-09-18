@@ -1,0 +1,20 @@
+D:\Empresa\GFMaurila\projetos\TS-SE-Tool\TS SE Tool\bin\Debug\updater\updater.exe.config
+D:\Empresa\GFMaurila\projetos\TS-SE-Tool\TS SE Tool\bin\Debug\updater\updater.exe
+D:\Empresa\GFMaurila\projetos\TS-SE-Tool\TS SE Tool\bin\Debug\updater\updater.pdb
+D:\Empresa\GFMaurila\projetos\TS-SE-Tool\TS SET Updater\obj\Debug\TS SET Updater.csproj.AssemblyReference.cache
+D:\Empresa\GFMaurila\projetos\TS-SE-Tool\TS SET Updater\obj\Debug\TS_SET_Updater.FormMain.resources
+D:\Empresa\GFMaurila\projetos\TS-SE-Tool\TS SET Updater\obj\Debug\TS_SET_Updater.Properties.Resources.resources
+D:\Empresa\GFMaurila\projetos\TS-SE-Tool\TS SET Updater\obj\Debug\TS SET Updater.csproj.GenerateResource.cache
+D:\Empresa\GFMaurila\projetos\TS-SE-Tool\TS SET Updater\obj\Debug\TS SET Updater.csproj.CoreCompileInputs.cache
+D:\Empresa\GFMaurila\projetos\TS-SE-Tool\TS SET Updater\obj\Debug\updater.exe
+D:\Empresa\GFMaurila\projetos\TS-SE-Tool\TS SET Updater\obj\Debug\updater.pdb
+D:\Empresa\GFMaurila\projetos\TS-SE-Tool-ATS-ETS2-1.61\TS.SE.Tool.vs.0.3.11.0\TS SE Tool\bin\Debug\updater\updater.exe.config
+D:\Empresa\GFMaurila\projetos\TS-SE-Tool-ATS-ETS2-1.61\TS.SE.Tool.vs.0.3.11.0\TS SE Tool\bin\Debug\updater\updater.exe
+D:\Empresa\GFMaurila\projetos\TS-SE-Tool-ATS-ETS2-1.61\TS.SE.Tool.vs.0.3.11.0\TS SE Tool\bin\Debug\updater\updater.pdb
+D:\Empresa\GFMaurila\projetos\TS-SE-Tool-ATS-ETS2-1.61\TS.SE.Tool.vs.0.3.11.0\TS SET Updater\obj\Debug\TS SET Updater.csproj.AssemblyReference.cache
+D:\Empresa\GFMaurila\projetos\TS-SE-Tool-ATS-ETS2-1.61\TS.SE.Tool.vs.0.3.11.0\TS SET Updater\obj\Debug\TS_SET_Updater.FormMain.resources
+D:\Empresa\GFMaurila\projetos\TS-SE-Tool-ATS-ETS2-1.61\TS.SE.Tool.vs.0.3.11.0\TS SET Updater\obj\Debug\TS_SET_Updater.Properties.Resources.resources
+D:\Empresa\GFMaurila\projetos\TS-SE-Tool-ATS-ETS2-1.61\TS.SE.Tool.vs.0.3.11.0\TS SET Updater\obj\Debug\TS SET Updater.csproj.GenerateResource.cache
+D:\Empresa\GFMaurila\projetos\TS-SE-Tool-ATS-ETS2-1.61\TS.SE.Tool.vs.0.3.11.0\TS SET Updater\obj\Debug\TS SET Updater.csproj.CoreCompileInputs.cache
+D:\Empresa\GFMaurila\projetos\TS-SE-Tool-ATS-ETS2-1.61\TS.SE.Tool.vs.0.3.11.0\TS SET Updater\obj\Debug\updater.exe
+D:\Empresa\GFMaurila\projetos\TS-SE-Tool-ATS-ETS2-1.61\TS.SE.Tool.vs.0.3.11.0\TS SET Updater\obj\Debug\updater.pdb
