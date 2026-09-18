@@ -17,6 +17,10 @@ Python 3.13+, PySide6, pytest/pytest-cov, Ruff, mypy, PyInstaller. Código tipad
 8. Ao fim de cada task: Ruff, mypy e testes relevantes. Só avance com gate verde.
 9. Registre decisões em `docs/` e resultados curtos em `tasks/reports/`.
 10. Não invente suporte a formato criptografado. Se decoder externo for necessário, encapsule-o atrás de uma interface e documente licença/origem.
+11. Antes de iniciar uma nova task, verifique se há indicação de limite próximo de créditos/tokens/contexto/sessão. Se houver, não inicie a task: execute o protocolo de encerramento seguro definido em `AGENTS.md`.
+12. Quando interromper por limite, gere/atualize `tasks/reports/CONTINUATION_REPORT.md` com data/hora real, estado verificável e próximos passos.
+13. Em toda nova sessão, se `CONTINUATION_REPORT.md` existir, ele deve ser lido antes de qualquer task e usado como ponto de retomada.
+14. Nunca invente saldo, percentual ou quantidade de créditos restantes se a plataforma não fornecer essa informação.
 
 ## Definition of Done global
 - Descobre perfis ATS/ETS2.
@@ -27,4 +31,24 @@ Python 3.13+, PySide6, pytest/pytest-cov, Ruff, mypy, PyInstaller. Código tipad
 - GUI desktop funcional.
 - `scripts/build.ps1` produz pacote Windows via PyInstaller.
 
-Comece por `tasks/00-analyze-legacy.md`.
+## Fluxo de execução e continuidade
+```text
+INÍCIO/RETOMADA
+      ↓
+AGENTS.md + PROJECT.md
+      ↓
+CONTINUATION_REPORT existe? ── SIM → validar estado → retomar ponto registrado
+      │ NÃO
+      ↓
+TASK atual
+      ↓
+IMPLEMENTAÇÃO
+      ↓
+QUALITY GATES
+      ↓
+Limite de créditos/tokens/contexto próximo?
+      ├── NÃO → próxima task
+      └── SIM → testes possíveis → CONTINUATION_REPORT.md → STOP seguro
+```
+
+Comece por `tasks/00-analyze-legacy.md`, salvo quando um `CONTINUATION_REPORT.md` válido indicar explicitamente outro ponto de retomada.
