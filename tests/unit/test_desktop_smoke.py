@@ -5,10 +5,10 @@ os.environ.setdefault("QT_QPA_PLATFORM", "offscreen")
 from PySide6.QtCore import QSettings
 from PySide6.QtWidgets import QApplication, QDialog, QFileDialog
 
+from tsse.application.compatibility import GameVersion
 from tsse.config import GameRootStore
 from tsse.core.profiles import Game
 from tsse.desktop.main import create_window
-from tsse.application.compatibility import GameVersion
 
 PROFILE = """SiiNunit
 {

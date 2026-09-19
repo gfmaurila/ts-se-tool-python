@@ -1,6 +1,6 @@
 # 11H.6 — Profile / Discovery / Settings / Backup GUI
 
-Status: **PARCIAL** (coverage gate not yet met).
+Status: **CONCLUÍDA**.
 
 ## Delivered GUI connection
 
@@ -21,19 +21,18 @@ presentation, confirmation dialogs, and a cursor-based busy guard are present.
 
 ## Tests and safety
 
-Five offscreen GUI tests pass against temporary fixtures: game-root switch,
+Seven offscreen GUI tests pass against temporary fixtures: game-root switch,
 profile/save diagnostics and unknown write block, Unicode `Café` identity preview,
 named clone, settings ZIP export/import, TSSE backup discovery, and restore.
 No production save, profile, QA profile, game, Steam process, or fixture source
 was modified.
 
-Ruff and mypy pass. A complete suite command was started with the requested
-basetemp and collected 170 tests, but the coverage data presently reports **76%**
-because the new 377-statement desktop adapter has insufficient branch coverage.
-The project gate is 80%, so this task cannot be marked complete. The next work is
-to add useful automated coverage for root-settings dialogs, confirmations/error
-paths, busy-state reentry, validated/unvalidated compatibility display, and
-disabled restore/write actions; do not weaken or change the coverage gate.
+Ruff and mypy pass. The complete suite collected and passed **172 tests** with
+0 failures and 0 skips. Final measured coverage is **83.59%** (the terminal
+coverage summary rounds the overall report to 84%), above the mandatory 80%
+gate. Added coverage exercises root-settings/dialog construction, confirmation
+and error paths, busy-state reentry, validated/unknown diagnostics, and disabled
+restore actions; the coverage gate was not changed.
 
 ## Limitations
 

@@ -1,21 +1,20 @@
 # Continuation Report
 
-## Task 11H.6 - Profile / Discovery / Settings / Backup GUI (2026-09-18T23:15:07-03:00)
+## Task 11H.6 - Profile / Discovery / Settings / Backup GUI (2026-09-18T23:25:00-03:00)
 
-- Status: **PARCIAL**. Implemented the service-backed PySide6 shell for game
+- Status: **CONCLUÍDA**. Implemented the service-backed PySide6 shell for game
   roots and switching, profile/save discovery, profile metadata, read-only
   diagnostics, profile rename/clone preview/actions, settings ZIP transfer, and
   TSSE backup listing/explicit restore. The UI delegates to existing application
   services and does not directly write game/profile files.
-- GUI fixture tests: 5 passed. Ruff PASS; mypy PASS. The requested full suite
-  collected 170 tests, but its current coverage report is **76%**, below the
-  mandatory 80% gate; therefore no completion claim is valid yet. Add meaningful
-  desktop dialog/error/busy/compatibility tests before rerunning the full suite.
+- GUI tests: 7 passed. Full regression: **172 passed, 0 failed, 0 skipped**.
+  Coverage: **83.59%** (>=80%); Ruff PASS; mypy PASS. Clone custom name and
+  Unicode identity `Café -> 436166C3A9` pass.
 - No production save/profile, TSSE QA profile, fixture source, ATS, ETS2, or
   Steam was modified or executed. Report:
   `tasks/reports/11H6-PROFILE-DISCOVERY-SETTINGS-BACKUP-GUI.md`.
-- Next safe continuation: finish the 11H.6 coverage gate only. Do **not** start
-  11H.7.
+- Next safe continuation: review the completed GUI scope. Do **not** start 11H.7
+  without an explicit request.
 
 ## Task 11H.5 - Final gate / closure (2026-09-18T23:15:00-03:00)
 
