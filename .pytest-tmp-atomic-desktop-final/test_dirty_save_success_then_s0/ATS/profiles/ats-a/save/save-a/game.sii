@@ -1,0 +1,17 @@
+SiiNunit
+{
+economy : economy.one {
+ experience_points: 11
+ adr: 2
+}
+user_profile : profile.one {
+ male: true
+ company_name: "Acme"
+}
+bank : bank.one {
+ money_account: 100
+}
+player : player.one {
+ hq_city: garage.stable
+}
+}

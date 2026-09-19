@@ -1,5 +1,192 @@
 # Continuation Report
 
+## Task 11H.7 Phase 1D.6.3A - Context Switch Coordinator (2026-09-19T03:45:52-03:00)
+
+- Status: **COMPLETE**. Next authorized task: **Phase 1D.6.3B - Atomic Reload**. Do
+  not begin it automatically and do not begin markets.
+- Added one MainWindow coordinator for Game/Profile/Save selection changes. It uses
+  the existing active-editor contract plus PendingChangesPrompt; Save failures and
+  Cancel restore the stable prior combo selection under QSignalBlocker and keep the
+  prior context/editor/dirty values. Clean, Save, Discard and Cancel changes use the
+  existing discovery/load pipeline; no reload pipeline was redesigned.
+- Files changed: `src/tsse/application/active_editor.py`, `src/tsse/desktop/main.py`,
+  `tests/unit/test_desktop_context_switch.py`,
+  `tasks/reports/11H7-MAIN-PLAYER-COMPANY-GARAGE-MARKET-GUI.md`, this report.
+- Checks: context switch 17 passed; Player desktop 9 passed; Company desktop 14
+  passed; Garage desktop 13 passed; Garage backend/dialog 27 passed; active-editor 1
+  passed; MainWindow foundation 7 passed; scoped Ruff/mypy PASS. Tests used temporary
+  fixtures only. No production/profile/QA save was changed.
+
+## Task 11H.7 Phase 1D.6.2E - Garage Active Editor/Binding (2026-09-19T03:39:53-03:00)
+
+- Status: **GARAGE COMPLETE** for the desktop binding scope. The next authorized task
+  is **Phase 1D.6.3A - Context Switch Coordinator**; do not begin it automatically.
+- `GarageEditorSession` now holds pending status values and supports dirty/save/discard
+  through the existing EditorService/SaveEditService safety path. MainWindow owns one
+  persistent Garage session per current context, preserves stable selection through
+  projection, and binds the same session through SessionEditorAdapter. Sale uses the
+  existing backend and separate confirmation; a dirty cancel has focused proof of no
+  write and no confirmation.
+- Files changed: `src/tsse/application/editor_service.py`,
+  `src/tsse/application/active_editor.py`, `src/tsse/desktop/main.py`,
+  `tests/unit/test_desktop_garage_editor.py`,
+  `tasks/reports/11H7-MAIN-PLAYER-COMPANY-GARAGE-MARKET-GUI.md`, this report.
+- Checks: Garage desktop 13 passed; Garage backend/dialog suite 27 passed; Player
+  desktop 9 passed; Company desktop 14 passed; active-editor 1 passed; MainWindow
+  foundation 7 passed; scoped Ruff/mypy PASS. Temporary files only; no production,
+  profile, or QA save changed.
+
+## Task 11H.7 Phase 1D.6.2D.2 - Company Save/Discard Closure (2026-09-19T03:30:55-03:00)
+
+- Status: **COMPANY COMPLETE**. Next authorized task: **Phase 1D.6.2E - Garage Active
+  Editor/Binding**. Do not begin it automatically; do not start context switching or
+  atomic reload.
+- MainWindow now connects Company Save/Discard buttons to the existing shared active
+  editor. The persistent `CompanyEditorSession` retains the safe `EditorService` /
+  `SaveEditService` path. On write failure, no widget reprojection follows the raised
+  error, preserving pending Company values, dirty state, active adapter and current
+  save context.
+- Files changed: `src/tsse/desktop/main.py`,
+  `tests/unit/test_desktop_company_editor.py`,
+  `tasks/reports/11H7-MAIN-PLAYER-COMPANY-GARAGE-MARKET-GUI.md`, this report.
+- Checks: Company desktop 14 passed; Company-domain backend 13 passed; focused Company
+  EditorService 1 passed (11 deselected); Player desktop 9 passed; active-editor 1
+  passed; MainWindow foundation 7 passed; scoped Ruff/mypy PASS. Temp/fixture files
+  only; no production/profile/QA save was changed.
+
+## Task 11H.7 Phase 1D.6.2D.1 - Company UI + Session Foundation (2026-09-19T03:25:01-03:00)
+
+- Status: **COMPLETE** for this microphase. The next authorized task is only
+  **Phase 1D.6.2D.2 - Company Save/Discard Closure**; do not begin Garage, context
+  switching, or atomic reload.
+- Added persistent `CompanyEditorSession` ownership to `MainWindow` and a structured
+  Company page for the existing name, money and HQ mutations. Read-only Company data
+  remains non-mutable. UI projection blocks Qt signals; name/money/HQ edits update the
+  same session and bind that same session through `SessionEditorAdapter` when the tab
+  is active. Compatibility remains authoritative: only controlled VALIDATED contexts
+  enable those fields.
+- Files changed: `src/tsse/desktop/main.py`,
+  `tests/unit/test_desktop_company_editor.py`,
+  `tasks/reports/11H7-MAIN-PLAYER-COMPANY-GARAGE-MARKET-GUI.md`, this report.
+- Checks: Company desktop 11 passed; Player desktop 9 passed; active-editor 1 passed;
+  MainWindow foundation 7 passed; scoped Ruff and mypy PASS. All tests use temporary
+  directories. No production, profile, or QA save was modified.
+- Pending strictly for the next Company microphase: wire and test existing safe Save,
+  error preservation, and Discard through the already-present session/adapter.
+
+## Task 11H.7 - Main / Player / Company / Garage / Market GUI (2026-09-19T01:34:58-03:00)
+
+- Status: **PARCIAL**. Last completed task: 11H.6; current task: 11H.7.
+- Completed: version-source investigation and read-only navigation projections for
+  Player, Company, Garages, Cargo Market, Freight Market, and Diagnostics.
+- Decision: configured roots are Documents data roots, not game-installation roots;
+  no reliable local version source was evidenced. No resolver was implemented and
+  UNKNOWN remains WRITE BLOCKED.
+- Files modified: `src/tsse/desktop/main.py`,
+  `tasks/reports/11H7-MAIN-PLAYER-COMPANY-GARAGE-MARKET-GUI.md`, this report.
+- Checks: ruff and mypy for `desktop/main.py` PASS. Focused pytest was blocked before
+  execution by `PermissionError` for default and workspace pytest temp directories;
+  full regression was not run.
+- Remaining: mutation workflows, dirty state, confirmations, reload, GUI tests and
+  final gates. No production/profile/QA save was modified.
+- Resume after resolving test-directory permissions:
+  `./.venv/Scripts/python.exe -m pytest tests/unit/test_desktop_smoke.py -q --basetemp=.pytest-tmp-11h7-focus`.
+- Continue 11H.7 only. Do not start 11H.8.
+
+## Task 11H.7 Phase 1 increment (2026-09-19T01:46:42-03:00)
+
+- Added `src/tsse/application/editor_service.py` and
+  `tests/unit/test_editor_service.py`; exported `EditorService` and `EditorSaveState`.
+- It delegates supplied backend mutations through `SaveEditService` and then reloads
+  the persisted document. Test context supplies explicit ATS 1.61 VALIDATED only for
+  a temporary save; UNKNOWN remains blocked before backup.
+- Checks: focused 2 passed; ruff PASS; mypy PASS.
+- Current task remains 11H.7 Phase 1, partial. Next exact work: bind Player controls
+  to `EditorService`, existing `player_editor` mutations, and focused GUI tests.
+
+## Task 11H.7 Phase 1B increment
+
+- Added `PlayerEditorSession` in `application.editor_service`, with pending XP/ADR/
+  Gender state, dirty detection, discard, safe save and reload through existing player
+  backend plus `SaveEditService`.
+- Focused `test_editor_service.py`: 4 passed. Ruff and mypy PASS.
+- Still pending: widget binding, validated/blocked GUI states, navigation prompt and
+  error injection tests. Continue 11H.7 Phase 1B only; do not start 1C/Phase 2/11H.8.
+
+## Task 11H.7 Phase 1B.1
+
+- Added reusable pure pending-change guard plus explicit dirty-on-error,
+  UNVALIDATED/UNSUPPORTED and Save/Discard/Cancel decision regressions.
+- Focused `test_editor_service.py`: 9 passed; ruff/mypy PASS.
+- GUI prompt/widget integration remains pending. Do not start 1C, Phase 2 or 11H.8.
+
+## Task 11H.7 Phase 1C increment
+
+- Added CompanyEditorSession for proven mutable company name, money and HQ only;
+  existing cities/dealers/recruitments/drivers remain read-only.
+- Focused editor-service tests: 10 passed. Finish visual Company/prompt binding before
+  declaring this phase complete. Do not start 1D, Phase 2 or 11H.8.
+
+## Task 11H.7 Phase 1C.1
+
+- Added shared `PendingChangesPrompt`; it presents only policy-authorized options and
+  returns the existing central decision enum. Focused dialog plus service tests: 11
+  passed; ruff/mypy PASS.
+- Pending: connect prompt to MainWindow Game/Profile/Save signal rollback/navigation.
+  Do not start 1D, Phase 2 or 11H.8.
+
+## Task 11H.7 Phase 1D increment
+
+- Added `GarageEditorSession` routing existing garage status/sale mutations through
+  EditorService/SaveEditService with reload. Ruff/mypy PASS for the service.
+- No garage GUI confirmation or focused test yet; continue Phase 1D only.
+
+## Task 11H.7 Phase 1D.1
+
+- Added focused GarageEditorSession regressions for stable identifier/status reload and
+  UNKNOWN no-backup blocking. Editor-service tests: 12 passed; ruff/mypy PASS.
+- Sale confirmation and MainWindow Garage UI remain pending. Continue Phase 1D only.
+
+## Task 11H.7 Phase 1D.2
+
+- Added/tested standalone GarageSaleConfirmation. Focused garage/dialog/editor suite:
+  27 passed; ruff/mypy PASS.
+- MainWindow binding and destructive-sale orchestration are still not implemented;
+  Phase 1D remains partial. Do not start 1E/Phase 2/11H.8.
+
+## Task 11H.7 Phase 1D.3 trace
+
+- MainWindow Garage area remains only a QTextEdit projection; it has no list, selected
+  identifier, status input, save/sell buttons, or signal handlers to repair.
+- Next safe unit: implement that complete widget/controller surface with real offscreen
+  MainWindow tests, then wire existing GarageEditorSession and confirmations. No code
+  was partially connected in this trace. Do not start 1E, Phase 2 or 11H.8.
+
+## Task 11H.7 Phase 1D.6
+
+- Added CurrentSaveContext and MainWindow lifecycle creation/clearing with shared
+  EditorService and typed CompatibilityAssessment. Desktop focused tests: 7 passed;
+  ruff/mypy PASS.
+- Pending: dirty-aware selection switching and GarageEditorSession factory/binding.
+  Do not start 1D.7/1E/Phase 2/11H.8.
+
+## Task 11H.7 Phase 1D.4
+
+- Replaced read-only Garage projection with structured list/details widgets using stable
+  UserRole identifiers. Save/Sell are present but intentionally disabled pending real
+  session/dirty orchestration. ruff/mypy pass for `desktop/main.py`.
+- Next: bind a stored validated editor session and write focused MainWindow GUI tests.
+
+## Task 11H.7 recovery update (2026-09-19T01:34:58-03:00)
+
+- A new local basetemp was created. Sandboxed pytest still received `PermissionError`
+  at workspace-local cleanup; rerunning the same focused GUI test outside the sandbox
+  passed: **7 passed, 0 failed, 0 skipped**.
+- Matrix discrepancy resolved: `19/16/8/1` was the superseded 11F snapshot. The
+  authoritative post-11H.6 aggregate is restored/documented as **19/20/4/1**.
+- Remaining task scope is unchanged: connect validated-only GUI mutations to existing
+  services, then add dirty/reload/error tests and run complete gates. Do not start 11H.8.
+
 ## Task 11H.6 - Profile / Discovery / Settings / Backup GUI (2026-09-18T23:25:00-03:00)
 
 - Status: **CONCLUÍDA**. Implemented the service-backed PySide6 shell for game
@@ -503,6 +690,31 @@ original fixture hashes remain unchanged (ATS
 `DEBE167F2210C69E81588110C93D24A860E400A5C212EA80359A617C6E07868D`).
 
 Next: 11F final gates — not started.
+
+## Phase 1D.6.3B — atomic reload (2026-09-19T03:59:24-03:00)
+
+Status: **COMPLETE**. Implemented the shared MainWindow `reload_current_save()`
+with candidate-before-commit construction and atomic state replacement. The
+candidate includes the reparsed document, CurrentSaveContext, EditorService,
+CompatibilityAssessment and all Player/Company/Garage sessions. Commit rebinds the
+existing ActiveEditor to the replacement session, restores Garage selection by
+stable identity, and reprojections use signal blocking without introducing dirty
+state. Parse, service-construction and validation failures preserve the prior
+coherent context; write-success/reload-failure preserves the in-memory UI state
+without claiming the disk write failed.
+
+Results: atomic reload 11 passed, 0 failed; combined desktop context/editor tests
+64 passed, 0 failed; backend/dialog/active-editor/MainWindow smoke regressions 35
+passed, 0 failed; Ruff PASS; mypy PASS. Production saves, production profiles and
+real QA profiles were not modified.
+
+Files changed: `src/tsse/desktop/main.py`,
+`src/tsse/application/active_editor.py`,
+`tests/unit/test_desktop_atomic_reload.py`,
+`tests/unit/test_desktop_company_editor.py`,
+`tests/unit/test_desktop_garage_editor.py`, and this phase's reports.
+
+Next: PHASE 1E — CARGO MARKET GUI (not started).
 
 ## Configurable game roots (2026-09-18T16:25:48.3493105-03:00)
 

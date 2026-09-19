@@ -1,5 +1,13 @@
 # Legacy Feature Matrix — TS SE Tool 0.3.11.0
 
+## Classification correction (Task 11H.7 recovery)
+
+The older table below retains historical task snapshots and is not the current
+aggregate. The authoritative audit after 11H.6 is **44 total: 19 IMPLEMENTADO,
+20 PARCIAL, 4 NÃO IMPLEMENTADO, 1 N/A**. The conflicting `19/16/8/1` line is
+an earlier 11F consolidation, not a feature downgrade. Task 11H.7's read-only
+navigation increment does not change any feature classification.
+
 ## Task 11E -- final status
 
 CONCLUIDA. Legacy truck/trailer repair and read-only vehicle/trailer projections

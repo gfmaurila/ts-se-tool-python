@@ -1,0 +1,6 @@
+SiiNunit
+{
+garage : garage.one {
+ status: 1
+}
+}

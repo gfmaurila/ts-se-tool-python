@@ -1,0 +1,13 @@
+SiiNunit
+{
+economy : economy.one {
+ experience_points: 10
+ adr: 2
+}
+user_profile : profile.one {
+ male: true
+}
+garage : garage.stable {
+ status: 2
+}
+}

@@ -1,0 +1,6 @@
+SiiNunit
+{
+economy : economy.one {
+ experience_points: 42
+}
+}

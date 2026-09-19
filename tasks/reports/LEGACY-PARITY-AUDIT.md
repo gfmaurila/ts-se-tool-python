@@ -1,5 +1,12 @@
 # TS SE Tool 0.3.11.0 parity audit
 
+## Task 11H.7 recovery note
+
+The current aggregate remains **19 IMPLEMENTADO, 20 PARCIAL, 4 NÃO
+IMPLEMENTADO, 1 N/A**. A `19/16/8/1` value elsewhere is a superseded 11F
+snapshot. No feature was downgraded in Task 11H.7; its current GUI increment is
+read-only navigation and does not justify a classification change.
+
 Completed on 2026-09-18. The primary C# reference was audited by forms,
 tabs, profile editor, save models, decoder, utilities, and entry points.
 

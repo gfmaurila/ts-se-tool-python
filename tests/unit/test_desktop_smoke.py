@@ -87,6 +87,8 @@ def test_profile_save_diagnostics_and_unknown_write_block(tmp_path) -> None:
     diagnostic = window.inspect_selected_save()
     assert diagnostic.parse_ok is True
     assert diagnostic.write_allowed is False
+    assert window.current_save_context is not None
+    assert window.current_save_context.assessment.write_allowed is False
     window.close()
     assert application is not None
 

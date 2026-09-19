@@ -1,9 +1,12 @@
 """Application use cases."""
 
 from tsse.application.cargo_market import (
+    CargoMarketEditorSession,
+    CargoMarketEntry,
     CargoMarketError,
     CompanyIdentity,
     company_identity,
+    list_companies,
     randomize_city,
     randomize_company,
     reset_city,
@@ -65,6 +68,16 @@ from tsse.application.save_edit_service import (
     SaveEditService,
     SaveStructureError,
 )
+from tsse.application.editor_service import (
+    EditorSaveState,
+    EditorService,
+    CompanyEditorSession,
+    GarageEditorSession,
+    PendingChangeDecision,
+    PlayerEditorSession,
+    resolve_pending_change,
+)
+from tsse.application.current_save_context import CurrentSaveContext
 from tsse.application.trailer_editor import (
     TrailerComponent,
     find_trailer,
@@ -124,8 +137,11 @@ __all__ = [
     "find_garage",
     "set_garage_status",
     "CargoMarketError",
+    "CargoMarketEditorSession",
+    "CargoMarketEntry",
     "CompanyIdentity",
     "company_identity",
+    "list_companies",
     "randomize_city",
     "randomize_company",
     "reset_city",
@@ -148,4 +164,12 @@ __all__ = [
     "SaveEditError",
     "SaveEditService",
     "SaveStructureError",
+    "EditorSaveState",
+    "EditorService",
+    "CompanyEditorSession",
+    "GarageEditorSession",
+    "PlayerEditorSession",
+    "PendingChangeDecision",
+    "resolve_pending_change",
+    "CurrentSaveContext",
 ]

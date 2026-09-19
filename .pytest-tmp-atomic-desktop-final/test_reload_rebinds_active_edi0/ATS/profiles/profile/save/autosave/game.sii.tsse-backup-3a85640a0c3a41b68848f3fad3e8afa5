@@ -1,0 +1,26 @@
+SiiNunit
+{
+economy : economy.one {
+ experience_points: 10
+ adr: 2
+ garages: 1
+ garages[0]: garage.stable
+ driver_pool: 0
+}
+user_profile : profile.one {
+ male: true
+ company_name: "Acme"
+}
+bank : bank.one {
+ money_account: 100
+}
+player : player.one {
+ hq_city: garage.stable
+}
+garage : garage.stable {
+ status: 1
+ drivers: 0
+ vehicles: 0
+ trailers: 0
+}
+}

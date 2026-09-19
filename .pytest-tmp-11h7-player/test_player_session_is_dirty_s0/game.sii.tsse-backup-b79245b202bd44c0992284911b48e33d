@@ -1,0 +1,10 @@
+SiiNunit
+{
+economy : economy.one {
+ experience_points: 1
+ adr: 1
+}
+user_profile : profile.one {
+ male: true
+}
+}
