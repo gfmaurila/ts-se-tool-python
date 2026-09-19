@@ -1,0 +1,48 @@
+SiiNunit
+{
+save_container : _nameless.20c.cd75.9c68 {
+ name: ""
+ time: 128562
+ file_time: 1789694410
+ version: 102
+ info_version: 1
+ dependencies: 30
+ dependencies[0]: "dlc|eut2_balkane|DLC - Road to the Black Sea"
+ dependencies[1]: "dlc|eut2_balkanw|DLC - West Balkans"
+ dependencies[2]: "dlc|eut2_balt|DLC - Beyond the Baltic Sea"
+ dependencies[3]: "dlc|eut2_daf_21|DLC - DAF NGD"
+ dependencies[4]: "dlc|eut2_daf_xd|DLC - DAF XD"
+ dependencies[5]: "dlc|eut2_daf_xfe|DLC - DAF XF Electric"
+ dependencies[6]: "dlc|eut2_east|DLC - Going East!"
+ dependencies[7]: "dlc|eut2_ffb|DLC - Feldbinder Trailer Pack"
+ dependencies[8]: "rdlc|eut2_flags_bz|DLC - Brazilian Paint Jobs Pack"
+ dependencies[9]: "dlc|eut2_fr|DLC - Vive la France !"
+ dependencies[10]: "dlc|eut2_greece|DLC - Greece"
+ dependencies[11]: "rdlc|eut2_heavy_cargo|DLC - Heavy Cargo Pack"
+ dependencies[12]: "dlc|eut2_iberia|DLC - Iberia"
+ dependencies[13]: "dlc|eut2_it|DLC - Italia"
+ dependencies[14]: "dlc|eut2_ivc_sway|DLC - Iveco S-Way"
+ dependencies[15]: "dlc|eut2_man_tgx|DLC - MAN TGX 2020"
+ dependencies[16]: "rdlc|eut2_michelin|DLC - Michelin Fan Pack"
+ dependencies[17]: "rdlc|eut2_mighty_griffin|DLC - Mighty Griffin Tuning Pack"
+ dependencies[18]: "dlc|eut2_north|DLC - Scandinavia"
+ dependencies[19]: "rdlc|eut2_oversize|DLC - Special Transport"
+ dependencies[20]: "dlc|eut2_nordic|DLC - Nordic Horizons"
+ dependencies[21]: "dlc|eut2_retecht|DLC - Renault Trucks E-Tech T"
+ dependencies[22]: "rdlc|eut2_rims|DLC - Wheel Tuning Pack"
+ dependencies[23]: "rdlc|eut2_rocket_league|DLC - Rocket League"
+ dependencies[24]: "dlc|eut2_scans24e|DLC - Scania S BEV"
+ dependencies[25]: "rdlc|eut2_toys|DLC - Cabin Accessories"
+ dependencies[26]: "rdlc|eut2_trailers|DLC - High Power Cargo Pack"
+ dependencies[27]: "rdlc|eut2_volvocon|DLC - Volvo Construction Equipment"
+ dependencies[28]: "dlc|eut2_vlvfh5|DLC - Volvo FH Series 5"
+ dependencies[29]: "dlc|eut2_vlvfh6|DLC - Volvo FH Series 6"
+ info_players_experience: 951992
+ info_unlocked_recruitments: 33
+ info_unlocked_dealers: 290
+ info_visited_cities: 417
+ info_money_account: 1001
+ info_explored_ratio: &3dc8bfbc
+}
+
+}

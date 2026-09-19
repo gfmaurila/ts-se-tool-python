@@ -65,3 +65,20 @@ def test_missing_game_directory_has_no_profiles(tmp_path) -> None:
     discovery = ProfileDiscovery(DiscoverySettings.with_defaults(tmp_path / "Documents"))
 
     assert discovery.discover_all_profiles() == ()
+
+
+def test_manual_root_fallback_and_collection_validation(tmp_path) -> None:
+    documents = tmp_path / "Documents"
+    automatic = documents / Game.ATS.documents_folder_name
+    _profile(automatic, "profiles", "automatic")
+    manual = tmp_path / "manual-ats"
+    _profile(manual, "steam_profiles", "manual")
+    discovery = ProfileDiscovery(DiscoverySettings.with_defaults(documents))
+
+    assert discovery.discover_profiles(Game.ATS)[0].profile_id == "automatic"
+    discovery.set_configured_root(Game.ATS, manual)
+    assert [item.profile_id for item in discovery.discover_profiles(Game.ATS)] == ["manual"]
+    assert discovery.root_has_profile_collections(manual)
+    assert not discovery.root_has_profile_collections(tmp_path / "empty")
+    discovery.set_configured_root(Game.ATS, None)
+    assert discovery.discover_profiles(Game.ATS)[0].profile_id == "automatic"

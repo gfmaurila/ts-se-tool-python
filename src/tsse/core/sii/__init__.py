@@ -13,6 +13,17 @@ from tsse.core.sii.decoder import (
     detect_save_format,
 )
 from tsse.core.sii.parser import SiiBlock, SiiDocument, SiiField, SiiParseError, parse_sii
+from tsse.core.sii.references import (
+    DuplicateUnitIdentifierError,
+    MalformedReferenceError,
+    MissingReferenceTargetError,
+    ReferenceResolution,
+    ReferenceResolutionError,
+    ReferenceStatus,
+    SiiGraph,
+    TypedUnitReference,
+    WrongReferenceTypeError,
+)
 
 __all__ = [
     "DecodeError",
@@ -31,4 +42,13 @@ __all__ = [
     "SiiField",
     "SiiParseError",
     "parse_sii",
+    "DuplicateUnitIdentifierError",
+    "MalformedReferenceError",
+    "MissingReferenceTargetError",
+    "ReferenceResolution",
+    "ReferenceResolutionError",
+    "ReferenceStatus",
+    "SiiGraph",
+    "TypedUnitReference",
+    "WrongReferenceTypeError",
 ]

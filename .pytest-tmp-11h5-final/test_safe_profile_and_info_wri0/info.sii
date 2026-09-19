@@ -1,0 +1,17 @@
+SiiNunit
+{
+save_container : save.one {
+ name: "Slot"
+ time: 10
+ file_time: 20
+ version: 97
+ info_version: 1
+ info_players_experience: 30
+ info_money_account: -50
+ info_explored_ratio: &3cc0a4f6
+ unknown_future: preserve
+}
+future_info : opaque.one {
+ keep: yes
+}
+}

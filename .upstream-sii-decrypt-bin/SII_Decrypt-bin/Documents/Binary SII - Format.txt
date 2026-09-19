@@ -1,0 +1,217 @@
+================================================================================
+
+                                 >> WARNING <<<
+
+This document does not describe complete process of conversion from binary SII
+file into its textual form. It merely describes the file format.
+Binary SII format is not officially documented, so every information provided
+here is only an educated gues and comes from observation of data patterns.
+Nomenclature is also completely arbitrary and should not be referenced as being
+official (or even correct).
+
+================================================================================
+
+Notes on basic types:
+
+  - all binary values are stored with little endianness
+  - floating point numbers are conformant to IEEE 754
+  - strings seems to have UTF8 encoding, char is 8bit wide, they are NOT
+    null-terminated
+  - vectors, arrays and other structured types do not have any padding or
+    alignment, be it explicit or implicit
+  - all strings and arrays are stored as a pair of 32bit (unsigned) length
+    followed by an actual array of items/characters, empty arrays are stored
+    only as a length of zero
+
+
+General file structure
+----------------------------------------
+Binary SII files are a serialization of structures the game uses internally,
+but they are not just plain dump of the memory.
+Each file starts with an 8byte header, followed by one or more blocks.
+Currently, only two kind of blocks are recognized - structure block and data
+block.
+Structure block defines structure of one or more data blocks - so it denotes
+how the data block should be read and parsed. To this moment, all examined
+files had all structure blocks at the beginning (before any data block),
+followed by a stream of data blocks. But in theory, structure block might
+appear anywhere in the file, only necessary rule is that structure block must
+precede data block whose structure it defines.
+Stream of blocks is terminated by an invalid structure block (see further).
+
+
+Header
+----------------------------------------
+Structure of the header:
+
+  begin
+    UInt32 (4B)   - file signature, 0x49495342 ("BSII" when read as text)
+    UInt32 (4B)   - version of format used in the file
+                    (must be 1,2 or 3 for current implementation)
+  end
+
+WARNING - This documentation and also the decoder are both written only for
+          format versions 1,2 and 3! Other versions may differ in details and
+          current decoder cannot work with them.
+
+NOTE    - Currently, only known difference between version 1 and others is in 
+          value types 0x19 and 0x1A.
+
+
+Blocks
+----------------------------------------
+Every block has this structure:
+
+  begin
+    UInt32 (4B)             - block type
+    []     (variable size)  - payload
+  end
+
+If block type is zero, the block is considered to be a structure block.
+When it is any other number, it is considered to be a data block of structure
+given by this number (see further for details).
+
+
+Structure block
+----------------------------------------
+Structure block is denoted by a block type of 0.
+Payload of the structure block consists of an 8bit boolean value denoting block
+validity, structure ID, structure name and an array of value information (type,
+name and field-specific data). This array is terminated by a value type of zero
+(NOT followed by a value name or data).
+When the 8bit boolean value (validity) is zero, the block is considered to be
+invalid and marks an end of the file.
+Structure ID must not be 0 and must be unique (ID equal to 0 or non-unique ID is
+treated as an error).
+
+Structure of payload:
+
+  begin
+    ByteBool  (1B)            - validity
+    UInt32    (4B)            - structure ID
+    String    (variable size) - structure name
+    array of ...
+    begin
+      UInt32    (4B)            - value type
+      String    (variable size) - value name
+      Data      (variable size) - data specific to this field (also depends
+                                  on value type)
+    end
+    UInt32    (4B)            - invalid value type (0)
+  end
+
+Structure ID is used to identify actual structure of any data block.
+Structure name is just an identifier, no deeper meaning is known at this moment.
+Value type number marks type of the stored data (integer, string, array, ...).
+You can find description of individual types in a file "Binary SII - Types.txt".
+Value name is a string identifier of the field. It is used in textual form of
+SII files as an identifier.
+Data are type-specific and field-specific. Format of the data depends on value
+type and actual stored data are specific for the field and structure they
+appear in. For example data for type 0x37 (ordinal string) contains an array
+of integer-string pairs.
+
+
+Data block
+----------------------------------------
+Data block is denoted by a block type other than 0.
+Payload of the data block consists of block ID (which is a complex structure -
+for details see documentation of types) and a stream of data fields. Individual
+fields are not separated by any padding or any other data.
+Number and type of individual fields is given by actual block type. You take
+block type number and find a structure block that has the same structure ID as
+is this number. This structure block then defines these fields (items in an
+array of value type and name pairs).
+
+
+Example BSII file
+----------------------------------------
+Let's have the following binary SII file (here shown as a hex stream):
+
+  42 53 49 49  02 00 00 00  00 00 00 00  01 01 00 00  00 0F 00 00  00 66 69 72
+  73 74 5F 73  74 72 75 63  74 75 72 65  25 00 00 00  0B 00 00 00  69 6E 74 33
+  32 5F 66 69  65 6C 64 36  00 00 00 14  00 00 00 62  79 74 65 62  6F 6F 6C 5F
+  61 72 72 61  79 5F 66 69  65 6C 64 34  00 00 00 18  00 00 00 65  6D 70 74 79
+  5F 75 69 6E  74 36 34 5F  61 72 72 61  79 5F 66 69  65 6C 64 00  00 00 00 00
+  00 00 00 01  02 00 00 00  04 00 00 00  6C 61 73 74  05 00 00 00  0C 00 00 00
+  73 69 6E 67  6C 65 5F 66  69 65 6C 64  00 00 00 00  01 00 00 00  FF 01 02 03
+  04 05 06 07  08 FF FF FF  FF 03 00 00  00 00 01 00  00 00 00 00  02 00 00 00
+  FF F8 F9 FA  FB FC FD FE  FF 00 00 80  3F 00 00 00  00 00
+
+
+It should be read and parsed this way:
+
+  data (as they appear in the stream)         |  meaning                        |  value                        |  notes
+----------------------------------------------|---------------------------------|-------------------------------|------------------------------------------
+  42 53 49 49                                 |  file signature                 |  "BSII"                       |
+  02 00 00 00                                 |  format version                 |  2                            |
+- - - - - - - - - - - - - - - - - - - - - - - | - - - - - - - - - - - - - - - - | - - - - - - - - - - - - - - - | - - - - - - - - - - - - - - - - - - - - -
+  00 00 00 00                                 |  block type                     |  0                            |  structure block
+  01                                          |  validity                       |  valid                        |
+  01 00 00 00                                 |  structure ID                   |  1                            |
+  0F 00 00 00                                 |  length of following string     |  15                           |
+  66 69 72 73  74 5F 73 74  72 75 63 74       |                                 |                               |
+  75 72 65                                    |  structure name                 |  "first_structure"            |
+                                              |                                 |                               |
+     25 00 00 00                              |  value type                     |  37                           |  Int32
+     0B 00 00 00                              |  length of following string     |  11                           |
+     69 6E 74 33  32 5F 66  69 65 6C 64       |  value name                     |  "int32_field"                |
+                                              |                                 |                               |
+     36 00 00 00                              |  value type                     |  54                           |  array of ByteBool
+     14 00 00 00                              |  length of following string     |  20                           |
+     62 79 74 65  62 6F 6F 6C  5F 61 72 72    |                                 |                               |
+     61 79 5F 66  69 65 6C 64                 |  value name                     |  "bytebool_array_field"       |
+                                              |                                 |                               |
+     34 00 00 00                              |  value type                     |  52                           |  array of UInt64
+     18 00 00 00                              |  length of following string     |  24                           |
+     65 6D 70 74  79 5F 75 69  6E 74 36 34    |                                 |                               |
+     5F 61 72 72  61 79 5F 66  69 65 6C 64    |  value name                     |  "empty_uint64_array_field"   |
+                                              |                                 |                               |
+     00 00 00 00                              |  value type                     |  0                            |  end of this structure block
+- - - - - - - - - - - - - - - - - - - - - - - | - - - - - - - - - - - - - - - - | - - - - - - - - - - - - - - - | - - - - - - - - - - - - - - - - - - - - -
+  00 00 00 00                                 |  block type                     |  0                            |  structure block
+  01                                          |  validity                       |  valid                        |
+  02 00 00 00                                 |  tructure ID                    |  2                            |
+  04 00 00 00                                 |  length of following string     |  4                            |
+  6C 61 73 74                                 |  structure name                 |  "last"                       |
+                                              |                                 |                               |
+     05 00 00 00                              |  value type                     |  5                            |  Single
+     0C 00 00 00                              |  length of following string     |  12                           |
+     73 69 6E 67  6C 65 5F 66  69 65 6C 64    |  value name                     |  "single_field"               |
+                                              |                                 |                               |
+     00 00 00 00                              |  value type                     |  0                            |  end of this structure block
+- - - - - - - - - - - - - - - - - - - - - - - | - - - - - - - - - - - - - - - - | - - - - - - - - - - - - - - - | - - - - - - - - - - - - - - - - - - - - -
+  01 00 00 00                                 |  block type                     |  1                            |  data block, structure defined in structure with ID 1
+  FF 01 02 03  04 05 06 07  08                |  block ID                       |                               |
+                                              |                                 |                               |
+     FF FF FF FF                              |  Int32 value                    |  -1                           |
+     03 00 00 00                              |  length of the following array  |  3                            |
+     00 01 00                                 |  array of ByteBool              |  [false,true,false]           |
+     00 00 00 00                              |  length of the following array  |  0                            |  since the length is 0, no data follows
+- - - - - - - - - - - - - - - - - - - - - - - | - - - - - - - - - - - - - - - - | - - - - - - - - - - - - - - - | - - - - - - - - - -
+  02 00 00 00                                 |  block type                     |  2                            |  data block, structure defined in structure with ID 2
+  FF F8 F9 FA  FB FC FD FE  FF                |  block ID                       |                               |
+  00 00 80 3F                                 |  single value                   |  1.0                          |
+- - - - - - - - - - - - - - - - - - - - - - - | - - - - - - - - - - - - - - - - | - - - - - - - - - - - - - - - | - - - - - - - - - - - - - - - - - - - - -
+  00 00 00 00                                 |  block type                     |  0                            |  structure block
+  00                                          |  validity                       |  invalid                      |  end of file
+----------------------------------------------|---------------------------------|-------------------------------|------------------------------------------
+
+When converted into textual form, it looks like this:
+
+SiiNunit
+{
+first_structure : _nameless.807.0605.0403.0201 {
+ int32_field: -1
+ bytebool_array_field: 3
+ bytebool_array_field[0]: false
+ bytebool_array_field[1]: true
+ bytebool_array_field[2]: false
+ empty_uint64_array_field: 0
+}
+
+last : _nameless.fffe.fdfc.fbfa.f9f8 {
+ single_field: 1
+}
+
+}

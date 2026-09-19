@@ -1,0 +1,12 @@
+SiiNunit
+{
+user_profile : profile.one {
+ profile_name: "External"
+ creation_time: 10
+ save_time: 20
+ unknown_future: preserve
+}
+future_profile : opaque.one {
+ keep: yes
+}
+}

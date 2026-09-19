@@ -1,5 +1,15 @@
-"""Optional save decoder adapters."""
+"""Infrastructure-only save decoder adapters."""
 
-from tsse.infrastructure.decoder.external import ExternalDecoder, as_decoder
+from tsse.infrastructure.decoder.external import (
+    LegacySiiDecryptAdapter,
+    SiiDecoder,
+    SiiDecryptError,
+    SiiDecryptNotFoundError,
+    SiiDecryptOutputError,
+    SiiDecryptProcessError,
+)
 
-__all__ = ["ExternalDecoder", "as_decoder"]
+__all__ = [
+    "LegacySiiDecryptAdapter", "SiiDecoder", "SiiDecryptError", "SiiDecryptNotFoundError",
+    "SiiDecryptOutputError", "SiiDecryptProcessError",
+]

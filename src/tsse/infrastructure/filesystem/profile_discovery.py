@@ -43,6 +43,28 @@ class ProfileDiscovery:
     def __init__(self, settings: DiscoverySettings) -> None:
         self._settings = settings
 
+    def set_configured_root(self, game: Game, root: Path | None) -> None:
+        """Update one manual root while retaining automatic fallback."""
+        custom = dict(self._settings.custom_game_folders)
+        if root is None:
+            custom.pop(game, None)
+        else:
+            custom[game] = root
+        self._settings = DiscoverySettings(
+            self._settings.documents_directory,
+            custom,
+            self._settings.installation_folders,
+        )
+
+    @staticmethod
+    def root_has_profile_collections(root: Path) -> bool:
+        """Return whether a root contains either supported profile collection."""
+        return any((root / collection).is_dir() for collection, _ in PROFILE_COLLECTIONS)
+
+    def root_for_game(self, game: Game) -> Path:
+        """Return the effective configured-or-automatic root for status text."""
+        return self._settings.game_documents_directory(game)
+
     def discover_installations(self) -> tuple[GameInstallation, ...]:
         """Return configured game locations, including missing paths for diagnostics."""
         return tuple(

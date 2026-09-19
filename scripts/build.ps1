@@ -5,5 +5,5 @@ if (-not (Test-Path $python)) {
 }
 & $python -m pip install -e ".[dev]"
 & "$PSScriptRoot\run-tests.ps1"
-& $python -m PyInstaller --noconfirm --clean --windowed --name "TS-SE-Tool-Python" src/tsse/desktop/main.py
-Write-Host "Build em dist\TS-SE-Tool-Python"
+& $python -m PyInstaller --noconfirm --clean --onefile --windowed --name "TS-SE-Tool" --add-data "src/tsse/infrastructure/decoder/resources;tsse/infrastructure/decoder/resources" src/tsse/desktop/main.py
+Write-Host "Build em dist\TS-SE-Tool.exe"

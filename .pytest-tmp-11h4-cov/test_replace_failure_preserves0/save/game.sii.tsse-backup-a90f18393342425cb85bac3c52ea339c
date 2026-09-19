@@ -1,0 +1,7 @@
+SiiNunit
+{
+economy : economy.one {
+ adr: 0
+ unknown_future: keep
+}
+}

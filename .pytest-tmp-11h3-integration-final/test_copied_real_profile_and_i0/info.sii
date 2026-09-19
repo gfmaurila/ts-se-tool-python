@@ -1,0 +1,69 @@
+SiiNunit
+{
+save_container : _nameless.1c7.1e48.bfa8 {
+ name: ""
+ time: 12447
+ file_time: 1787467709
+ version: 97
+ info_version: 1
+ dependencies: 51
+ dependencies[0]: "dlc|ats_arkansas|DLC - Arkansas"
+ dependencies[1]: "dlc|ats_arizona|DLC - Arizona"
+ dependencies[2]: "rdlc|ats_christmas|DLC - Christmas Paint Jobs Pack"
+ dependencies[3]: "dlc|ats_colorado|DLC - Colorado"
+ dependencies[4]: "dlc|ats_forest|DLC - Forest Machinery"
+ dependencies[5]: "dlc|ats_fr_c19|DLC - Freightliner Cascadia"
+ dependencies[6]: "dlc|ats_fr_c24|DLC - Freightliner Cascadia\xc2\xae (5th Generation)"
+ dependencies[7]: "rdlc|ats_goodyear|DLC - Goodyear Tires Pack"
+ dependencies[8]: "rdlc|ats_heavy|DLC - Heavy Cargo Pack"
+ dependencies[9]: "dlc|ats_iowa|DLC - Iowa"
+ dependencies[10]: "dlc|ats_idaho|DLC - Idaho"
+ dependencies[11]: "dlc|ats_illinois|DLC - Illinois"
+ dependencies[12]: "dlc|ats_int_990i|DLC - International 9900i"
+ dependencies[13]: "dlc|ats_int_lone|DLC - International LoneStar"
+ dependencies[14]: "dlc|ats_int_lt|DLC - International LT"
+ dependencies[15]: "dlc|ats_kw_t680|DLC - Kenworth T680"
+ dependencies[16]: "dlc|ats_t680_22|DLC - Kenworth T680 2022"
+ dependencies[17]: "dlc|ats_kw_w900|DLC - Kenworth W900"
+ dependencies[18]: "dlc|ats_kansas|DLC - Kansas"
+ dependencies[19]: "dlc|ats_louisian|DLC - Louisiana"
+ dependencies[20]: "dlc|ats_lodeking|DLC - Lode King & Prestige Trailers Pack"
+ dependencies[21]: "dlc|ats_m_anthem|DLC - Mack Anthem"
+ dependencies[22]: "dlc|ats_m_pinna|DLC - Mack Pinnacle"
+ dependencies[23]: "dlc|ats_missouri|DLC - Missouri"
+ dependencies[24]: "dlc|ats_montana|DLC - Montana"
+ dependencies[25]: "dlc|ats_nebraska|DLC - Nebraska"
+ dependencies[26]: "rdlc|ats_neon|DLC - Retrowave Paint Jobs Pack"
+ dependencies[27]: "dlc|ats_nevada|DLC - Nevada"
+ dependencies[28]: "dlc|ats_nwmexico|DLC - New Mexico"
+ dependencies[29]: "dlc|ats_oklahoma|DLC - Oklahoma"
+ dependencies[30]: "dlc|ats_oregon|DLC - Oregon"
+ dependencies[31]: "rdlc|ats_oversize|DLC - Special Transport"
+ dependencies[32]: "dlc|ats_pb_389|DLC - Peterbilt 389"
+ dependencies[33]: "dlc|ats_pb_579|DLC - Peterbilt 579"
+ dependencies[34]: "rdlc|ats_rims|DLC - Wheel Tuning Pack"
+ dependencies[35]: "dlc|ats_space|DLC - Space Paint Jobs Pack"
+ dependencies[36]: "rdlc|ats_stripes|DLC - Classic Stripes Paint Jobs Pack"
+ dependencies[37]: "dlc|ats_texas|DLC - Texas"
+ dependencies[38]: "dlc|ats_utah|DLC - Utah"
+ dependencies[39]: "dlc|ats_volvocon|DLC - Volvo Construction Equipment"
+ dependencies[40]: "dlc|ats_volvo_vnl|DLC - Volvo VNL 2014"
+ dependencies[41]: "dlc|ats_v_vnl2018|DLC - Volvo VNL 2018"
+ dependencies[42]: "dlc|ats_v_vnl25|DLC - Volvo VNL"
+ dependencies[43]: "dlc|ats_v_vnr_e|DLC - Volvo VNR Electric"
+ dependencies[44]: "dlc|ats_w900_tun|DLC - W900 Tuning Pack"
+ dependencies[45]: "dlc|ats_wa|DLC - Washington"
+ dependencies[46]: "rdlc|ats_western|DLC - Wild West Paint Jobs Pack"
+ dependencies[47]: "dlc|ats_ws_49x|DLC - Western Star 49X"
+ dependencies[48]: "dlc|ats_ws_5700xe|DLC - Western Star 5700XE"
+ dependencies[49]: "dlc|ats_ws_57x|DLC - Western Star 57X"
+ dependencies[50]: "dlc|ats_wyoming|DLC - Wyoming"
+ info_players_experience: 984393
+ info_unlocked_recruitments: 1
+ info_unlocked_dealers: 3
+ info_visited_cities: 22
+ info_money_account: 100463
+ info_explored_ratio: &3cc0a4f6
+}
+
+}

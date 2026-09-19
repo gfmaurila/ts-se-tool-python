@@ -1,3 +1,4 @@
+import subprocess
 from pathlib import Path
 
 import pytest
@@ -9,8 +10,15 @@ from tsse.core.sii import (
     ScsContainerDecoder,
     UnsupportedSaveFormatError,
     detect_save_format,
+    parse_sii,
 )
-from tsse.infrastructure.decoder import ExternalDecoder
+from tsse.infrastructure.decoder import (
+    LegacySiiDecryptAdapter,
+    SiiDecoder,
+    SiiDecryptNotFoundError,
+    SiiDecryptOutputError,
+    SiiDecryptProcessError,
+)
 
 
 def test_detects_observed_headers() -> None:
@@ -67,10 +75,59 @@ def test_unknown_header_returns_typed_error() -> None:
         PlaintextDecoder().decode(b"unknown")
 
 
-def test_external_decoder_is_infrastructure_adapter() -> None:
-    decoder = ExternalDecoder(lambda data: b"SiiNunit\r\n" + data)
+def test_siin_file_bypasses_legacy_executable(tmp_path: Path) -> None:
+    source = tmp_path / "game.sii"
+    source.write_bytes(b"SiiNunit\n{\n}\n")
 
-    decoded = decoder.decode(b"ScsC\x00")
+    decoded = SiiDecoder(LegacySiiDecryptAdapter(tmp_path / "missing.exe")).decode_file(source)
 
-    assert decoded.data == b"SiiNunit\r\nScsC\x00"
-    assert decoded.source_format is SaveFormat.SCS_CONTAINER
+    assert decoded.data == source.read_bytes()
+    assert decoded.source_format is SaveFormat.PLAINTEXT
+
+
+@pytest.mark.parametrize(
+    "source",
+    [
+        Path("projeto_atual/ATS/67666D617572696C61202D207A657261646F/save/autosave/game.sii"),
+        Path("projeto_atual/ETS/4D4150415F455453/save/autosave/game.sii"),
+    ],
+)
+def test_real_fixture_decodes_bsii_type_07_and_preserves_original(source: Path) -> None:
+    original = source.read_bytes()
+
+    decoded = SiiDecoder().decode_file(source)
+
+    assert decoded.data.startswith(b"SiiNunit")
+    assert parse_sii(decoded.data.decode("utf-8")).blocks
+    assert source.read_bytes() == original
+
+
+def test_missing_decoder_is_typed_error(tmp_path: Path) -> None:
+    source = tmp_path / "game.sii"
+    source.write_bytes(b"ScsC")
+
+    with pytest.raises(SiiDecryptNotFoundError):
+        LegacySiiDecryptAdapter(tmp_path / "missing.exe").decode_file(source)
+
+
+def test_process_error_output_error_and_temp_cleanup(tmp_path: Path) -> None:
+    source = tmp_path / "game.sii"
+    source.write_bytes(b"ScsC")
+    executable = tmp_path / "SII_Decrypt.exe"
+    executable.write_bytes(b"placeholder")
+    seen: list[Path] = []
+
+    def failing_runner(arguments: list[str], workdir: Path) -> subprocess.CompletedProcess[str]:
+        seen.append(workdir)
+        assert (workdir / "game.sii").read_bytes() == b"ScsC"
+        return subprocess.CompletedProcess(arguments, 7, "", "decoder error")
+
+    with pytest.raises(SiiDecryptProcessError, match="exit code 7"):
+        LegacySiiDecryptAdapter(executable, failing_runner).decode_file(source)
+    assert seen and not seen[0].exists()
+
+    def no_output_runner(arguments: list[str], workdir: Path) -> subprocess.CompletedProcess[str]:
+        return subprocess.CompletedProcess(arguments, 0, "", "")
+
+    with pytest.raises(SiiDecryptOutputError, match="no output"):
+        LegacySiiDecryptAdapter(executable, no_output_runner).decode_file(source)
